@@ -20,6 +20,9 @@ namespace k_mean
         private kmeans km;
         private double[,] data;
         private int[] init;
+        private String TabelExcel;
+        private String path;
+        private System.Data.OleDb.OleDbConnection con;
 
         public Form1()
         {
@@ -41,11 +44,63 @@ namespace k_mean
             {
                 String path = fd.FileName;
                 lbl_file.Text = path;
+                this.path = path;
+                openCon(path);
+                if (this.con.State == ConnectionState.Closed)
+                {
+                    this.con.Open();
+                }
+                PilihTabel pt = new PilihTabel(this.con,this);
+                pt.ShowDialog();
             }
 
 
 
         }
+
+
+        public void setTabelExcel(String tabel)
+        {
+            this.TabelExcel = tabel;
+        }
+
+        public void setTabelFromExcel()
+        {
+            dg_data.DataSource = null;
+            DataTable dt = getDataTable(this.path, this.TabelExcel);
+
+            this.kolomTabel = dt.Columns.Count;
+            for (int i = 0; i < this.clusterTabel; i++)
+            {
+                dt.Columns.Add(new DataColumn("Cluster"+i,typeof(bool)));
+            }
+               
+            dg_data.DataSource = dt;
+        }
+
+        private DataTable getDataTable(String path,String tabel)
+        {
+
+            openCon(path);
+            if (this.con.State == ConnectionState.Closed)
+            {
+                this.con.Open();
+            }
+           
+            
+            System.Data.OleDb.OleDbDataAdapter q = new System.Data.OleDb.OleDbDataAdapter("SELECT * FROM [" + tabel + "]", this.con);
+            System.Data.DataSet ds = new System.Data.DataSet();          
+            q.Fill(ds);
+            return ds.Tables[0];
+        }
+
+
+        private void openCon(String path)
+        {
+            if(this.con==null)
+                this.con = new System.Data.OleDb.OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + path + "; Extended Properties = \"Excel 8.0;HDR=Yes;IMEX=1\";");
+        }
+
 
         private void btn_manual_Click(object sender, EventArgs e)
         {
@@ -66,8 +121,8 @@ namespace k_mean
 
         public void setTabel()
         {
-            
-            
+
+            this.dg_data.DataSource = null;
             DataTable dt = new DataTable();
             int index=0;
             for (int i = 1; i <= this.kolomTabel; i++)
@@ -104,8 +159,12 @@ namespace k_mean
             {
                 initData();
 
+                double thres = 0.1;
 
-                km = new kmeans(this.clusterTabel, this.data, 0.1, this.init);
+                if (!this.tb_threshold.Text.Equals(""))
+                    thres = Convert.ToDouble(tb_threshold.Text);
+
+                km = new kmeans(this.clusterTabel, this.data, thres, this.init);
                 this.km.proses();
                 cl = new Cluster(this.km.getdataiterasi());
                 cl.ShowDialog();
@@ -118,6 +177,11 @@ namespace k_mean
             {
                 MessageBox.Show("Input Data tidak valid");
             }
+            catch (Exception E)
+            {
+                MessageBox.Show("Terjadi Kesalahan Pembacaan data"+E.Message);
+            }
+
            
            
         }
@@ -159,6 +223,16 @@ namespace k_mean
 
 
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("K-Means Algorithm : github.com/anggamaulana/k-mean");
         }
     }
 }

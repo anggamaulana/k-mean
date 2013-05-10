@@ -9,3 +9,4 @@ D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k-mean.exe
 D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k-mean.pdb
 D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.tambahData.resources
 D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.Cluster.resources
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.PilihTabel.resources

@@ -93,7 +93,7 @@
             this.dg_cluster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_cluster.Location = new System.Drawing.Point(12, 148);
             this.dg_cluster.Name = "dg_cluster";
-            this.dg_cluster.Size = new System.Drawing.Size(841, 358);
+            this.dg_cluster.Size = new System.Drawing.Size(869, 387);
             this.dg_cluster.TabIndex = 5;
             // 
             // lbl_iterasi
@@ -125,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(778, 512);
+            this.button1.Location = new System.Drawing.Point(792, 541);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 540);
+            this.ClientSize = new System.Drawing.Size(893, 575);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_perpindahan);
             this.Controls.Add(this.lbl_centroid);
@@ -149,6 +149,7 @@
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.btn_prev);
             this.Name = "Cluster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cluster";
             this.Load += new System.EventHandler(this.Cluster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_cluster)).EndInit();

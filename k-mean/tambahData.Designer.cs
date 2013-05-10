@@ -88,6 +88,7 @@
             this.Controls.Add(this.tb_kolom);
             this.Controls.Add(this.label1);
             this.Name = "tambahData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "tambahData";
             this.Load += new System.EventHandler(this.tambahData_Load);
             this.ResumeLayout(false);
