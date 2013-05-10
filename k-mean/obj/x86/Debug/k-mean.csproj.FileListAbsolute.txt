@@ -1,0 +1,11 @@
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\bin\Debug\k-mean.exe
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\bin\Debug\k-mean.pdb
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.Form1.resources
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.Properties.Resources.resources
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k-mean.exe
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k-mean.pdb
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.tambahData.resources
+D:\PROJECT\Visual Studio 2010\k-mean\k-mean\obj\x86\Debug\k_mean.Cluster.resources
