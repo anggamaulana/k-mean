@@ -14,6 +14,7 @@ namespace k_mean
         public double[,] distance;
         public double[,] centroid;
         public double fungsisubjektif;
+        public int pergantianCluster;
 
         public DataIterasi()
         {

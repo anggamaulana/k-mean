@@ -17,6 +17,7 @@ namespace k_mean
         private double[,] centroid;
         private double threshold;
         private List<DataIterasi> di;
+        private int pergantianCluster=0;
         
         public kmeans(int cluster,double[,] data,double threshold)
         {
@@ -35,6 +36,7 @@ namespace k_mean
             this.centroid = new double[cluster,data.GetLength(1)];
             this.distance = new double[data.GetLength(0), this.cluster];
             di = new List<DataIterasi>();
+            
 
             int length=data.GetLength(0);
             this.fungsiKeanggotaan = new int[length,cluster];
@@ -75,7 +77,7 @@ namespace k_mean
                
 
                 //record iteration
-
+                //Untuk Mencatat perubahan iterasi bukan pemroses
                 DataIterasi dit = new DataIterasi();
                 dit.fungsiKeanggotaan = new int[this.fungsiKeanggotaan.GetLength(0), this.fungsiKeanggotaan.GetLength(1)];
                 dit.data = new double[this.data.GetLength(0), this.data.GetLength(1)];
@@ -83,13 +85,21 @@ namespace k_mean
                 dit.centroid = new double[this.centroid.GetLength(0), this.centroid.GetLength(1)];
                 Array.Copy(this.fungsiKeanggotaan, 0, dit.fungsiKeanggotaan, 0, this.fungsiKeanggotaan.Length);
                 Array.Copy(this.data, 0, dit.data, 0, this.data.Length);
+                dit.pergantianCluster = this.pergantianCluster;
+                //----------------------
 
+                
+                //proses utama
                 hitungCentroid();
                 alokasiDataKeCluster();
                 hitungFungsiSubjektif();
+                //---------------------
 
+                //record iteration
+                //Untuk Mencatat perubahan iterasi bukan pemroses
                 Array.Copy(this.distance, 0, dit.distance, 0, this.distance.Length);
                 Array.Copy(this.centroid, 0, dit.centroid, 0, this.centroid.Length);
+                
                 dit.cluster = this.cluster;
                 dit.fungsisubjektif = this.fungsisubjektif;
                 di.Add(dit);
@@ -179,17 +189,26 @@ namespace k_mean
                 titikKeCluster[i] = indexCluster;
 
                 //ganti fungsiKeanggotaan
+                int pergantiancluster = 0;
                 for (int l = 0; l < this.cluster; l++)
                 {
                     if (l == indexCluster)
                     {
+                        //hitung pergantian cluster
+                        if (this.fungsiKeanggotaan[i, l] == 0)
+                            pergantiancluster++;
+                        //-------------------------
+
                         this.fungsiKeanggotaan[i,l] = 1;
+                        
                     }
                     else
                     {
+                       
                         this.fungsiKeanggotaan[i, l] = 0;
                     }
                 }
+                this.pergantianCluster=pergantiancluster;
 
 
 

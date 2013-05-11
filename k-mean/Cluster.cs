@@ -76,10 +76,14 @@ namespace k_mean
             {
                 dt.Columns.Add("" + i);
             }
+            for (int i = 0; i < this.di[Iterasi].cluster; i++)
+            {
+                dt.Columns.Add("Jarak ke Cluster-" + i);
+            }
             //-----------------------------------------------------------
             for (int i = 0; i < baris; i++)
             {
-                Object[] obj = new Object[kolom + this.di[Iterasi].cluster];
+                Object[] obj = new Object[kolom + this.di[Iterasi].cluster*2];
                 int k = 0;
                 for (int j = 0; j < kolom; j++)
                 {
@@ -93,6 +97,12 @@ namespace k_mean
                         obj[k] = "*";
                     else
                         obj[k] = "";
+                    k++;
+                }
+
+                for (int m = 0; m < this.di[Iterasi].cluster; m++)
+                {
+                    obj[k] = this.di[Iterasi].distance[i, m];
                     k++;
                 }
 
@@ -119,6 +129,7 @@ namespace k_mean
             }
 
             lbl_centroid.Text = centroid;
+            lbl_perpindahan.Text = Convert.ToString(this.di[Iterasi].pergantianCluster);
 
         }
     }

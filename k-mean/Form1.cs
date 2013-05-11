@@ -179,7 +179,7 @@ namespace k_mean
             }
             catch (Exception E)
             {
-                MessageBox.Show("Terjadi Kesalahan Pembacaan data"+E.Message);
+                MessageBox.Show("Terjadi Kesalahan Pembacaan data "+E.Message);
             }
 
            
