@@ -70,11 +70,11 @@ namespace k_mean
 
             for (int i = 0; i < kolom; i++)
             {
-                dt.Columns.Add("");
+                dt.Columns.Add("Feature"+i);
             }
             for (int i = 0; i < this.di[Iterasi].cluster; i++)
             {
-                dt.Columns.Add("" + i);
+                dt.Columns.Add("Cluster" + i);
             }
             for (int i = 0; i < this.di[Iterasi].cluster; i++)
             {
@@ -122,10 +122,10 @@ namespace k_mean
                 for (int j = 0; j < this.di[Iterasi].centroid.GetLength(1); j++)
                 {
                     centroid += this.di[Iterasi].centroid[i, j];
-                    if (j < this.di[Iterasi].centroid.GetLength(1))
+                    if (j < this.di[Iterasi].centroid.GetLength(1)-1)
                         centroid += ";";
                 }
-                centroid += "}";
+                centroid += "}  ";
             }
 
             lbl_centroid.Text = centroid;

@@ -159,6 +159,8 @@ namespace k_mean
 
         private void alokasiDataKeCluster()
         {
+            int pergantiancluster = 0;
+
             //perulangan data
             for (int i = 0; i < this.data.GetLength(0); i++)
             {
@@ -189,7 +191,7 @@ namespace k_mean
                 titikKeCluster[i] = indexCluster;
 
                 //ganti fungsiKeanggotaan
-                int pergantiancluster = 0;
+                
                 for (int l = 0; l < this.cluster; l++)
                 {
                     if (l == indexCluster)
@@ -208,11 +210,13 @@ namespace k_mean
                         this.fungsiKeanggotaan[i, l] = 0;
                     }
                 }
-                this.pergantianCluster=pergantiancluster;
+                
 
 
 
             }
+
+            this.pergantianCluster = pergantiancluster;
         }
 
         private void hitungFungsiSubjektif()
