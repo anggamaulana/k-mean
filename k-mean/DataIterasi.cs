@@ -15,6 +15,7 @@ namespace k_mean
         public double[,] centroid;
         public double fungsisubjektif;
         public int pergantianCluster;
+        public double delta;
 
         public DataIterasi()
         {

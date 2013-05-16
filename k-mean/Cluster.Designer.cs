@@ -38,6 +38,10 @@
             this.lbl_centroid = new System.Windows.Forms.Label();
             this.lbl_perpindahan = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_subjektif = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lb_delta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_cluster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +95,7 @@
             // dg_cluster
             // 
             this.dg_cluster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_cluster.Location = new System.Drawing.Point(12, 148);
+            this.dg_cluster.Location = new System.Drawing.Point(12, 208);
             this.dg_cluster.Name = "dg_cluster";
             this.dg_cluster.Size = new System.Drawing.Size(869, 387);
             this.dg_cluster.TabIndex = 5;
@@ -125,7 +129,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(792, 541);
+            this.button1.Location = new System.Drawing.Point(792, 601);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -133,11 +137,51 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Fungsi Objektif";
+            // 
+            // lbl_subjektif
+            // 
+            this.lbl_subjektif.AutoSize = true;
+            this.lbl_subjektif.Location = new System.Drawing.Point(157, 153);
+            this.lbl_subjektif.Name = "lbl_subjektif";
+            this.lbl_subjektif.Size = new System.Drawing.Size(35, 13);
+            this.lbl_subjektif.TabIndex = 11;
+            this.lbl_subjektif.Text = "label5";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Delta Objektif";
+            // 
+            // lb_delta
+            // 
+            this.lb_delta.AutoSize = true;
+            this.lb_delta.Location = new System.Drawing.Point(157, 183);
+            this.lb_delta.Name = "lb_delta";
+            this.lb_delta.Size = new System.Drawing.Size(35, 13);
+            this.lb_delta.TabIndex = 13;
+            this.lb_delta.Text = "label6";
+            // 
             // Cluster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 575);
+            this.ClientSize = new System.Drawing.Size(893, 642);
+            this.Controls.Add(this.lb_delta);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_subjektif);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_perpindahan);
             this.Controls.Add(this.lbl_centroid);
@@ -170,6 +214,10 @@
         private System.Windows.Forms.Label lbl_centroid;
         private System.Windows.Forms.Label lbl_perpindahan;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_subjektif;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_delta;
        
     }
 }

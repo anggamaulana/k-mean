@@ -130,6 +130,8 @@ namespace k_mean
 
             lbl_centroid.Text = centroid;
             lbl_perpindahan.Text = Convert.ToString(this.di[Iterasi].pergantianCluster);
+            lbl_subjektif.Text=Convert.ToString(this.di[Iterasi].fungsisubjektif);
+            lb_delta.Text = Convert.ToString(this.di[Iterasi].delta);
 
         }
     }

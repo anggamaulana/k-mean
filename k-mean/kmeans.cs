@@ -102,6 +102,7 @@ namespace k_mean
                 
                 dit.cluster = this.cluster;
                 dit.fungsisubjektif = this.fungsisubjektif;
+                dit.delta = this.deltafungsiSubjektif;
                 di.Add(dit);
                 //-----------------
 
@@ -229,7 +230,7 @@ namespace k_mean
                     fs += this.fungsiKeanggotaan[i, j] * this.distance[i, j]; 
                 }
             }
-            this.deltafungsiSubjektif = fs - this.fungsisubjektif;
+            this.deltafungsiSubjektif = Math.Abs(fs - this.fungsisubjektif);
             this.fungsisubjektif = fs;
         }
 
